@@ -57,6 +57,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_slot" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for number -->
+      <div class="form-group">
+        <label for="number" class="control-label">
+          Number
+        </label>
+
+        <input type="text" id="number" name="number" placeholder="Number" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for event_id -->
+      <input type="hidden" name="event_id" value="<%= @event.id %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Slot
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

@@ -51,6 +51,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_event" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for company_id -->
+      <input type="hidden" name="company_id" value="<%= @company.id %>">
+
+      <!-- Label and input for number_of_slots -->
+      <div class="form-group">
+        <label for="number_of_slots" class="control-label">
+          Number of slots
+        </label>
+
+        <input type="text" id="number_of_slots" name="number_of_slots" placeholder="Number of slots" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for held_on -->
+      <div class="form-group">
+        <label for="held_on" class="control-label">
+          Held on
+        </label>
+
+        <input type="text" id="held_on" name="held_on" placeholder="Held on" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Event
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

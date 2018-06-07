@@ -6,6 +6,7 @@ class SlotsController < ApplicationController
   end
 
   def show
+    @availability = Availability.new
     @slot = Slot.find(params[:id])
 
     render("slots/show.html.erb")
