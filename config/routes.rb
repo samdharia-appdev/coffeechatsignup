@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "companies#index"
   # Routes for the Availability resource:
   # CREATE
   get "/availabilities/new", :controller => "availabilities", :action => "new"
