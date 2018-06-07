@@ -5,6 +5,8 @@ class Availability < ApplicationRecord
 
   # Validations
 
+  validates :slot_id, :uniqueness => { :scope => [:user_id] }
+
   validates :user_id, :presence => true
 
 end
