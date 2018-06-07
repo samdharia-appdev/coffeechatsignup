@@ -17,7 +17,13 @@
 
       <% @events.each do |event| %>
       <tr>
-        <td><%= event.company.company_name %></td>
+        <td>
+          <% if event.company.present? %>
+            <a href="/companies/<%= event.company.id %>">
+              <%= event.company.company_name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= event.number_of_slots %></td>
         <td><%= event.held_on %></td>
         <td>

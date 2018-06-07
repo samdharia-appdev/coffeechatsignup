@@ -18,8 +18,20 @@
       <% @slots.each do |slot| %>
       <tr>
         <td><%= slot.number %></td>
-        <td><%= slot.event.company_id %></td>
-        <td><%= slot.user.email %></td>
+        <td>
+          <% if slot.event.present? %>
+            <a href="/events/<%= slot.event.id %>">
+              <%= slot.event.company_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if slot.user.present? %>
+            <a href="/users/<%= slot.user.id %>">
+              <%= slot.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/slots/<%= slot.id %>" class="btn btn-primary">Show</a>
           <a href="/slots/<%= slot.id %>/edit" class="btn btn-warning">Edit</a>

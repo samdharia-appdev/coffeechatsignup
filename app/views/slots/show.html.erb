@@ -9,10 +9,22 @@
       <dd><%= @slot.number %></dd>
 
       <dt>Event</dt>
-      <dd><%= @slot.event_id %></dd>
+      <dd>
+        <% if @slot.event.present? %>
+          <a href="/events/<%= @slot.event_id %>">
+            <%= @slot.event.company_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>User</dt>
-      <dd><%= @slot.user_id %></dd>
+      <dd>
+        <% if @slot.user.present? %>
+          <a href="/users/<%= @slot.user_id %>">
+            <%= @slot.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

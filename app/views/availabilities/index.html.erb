@@ -16,8 +16,20 @@
 
       <% @availabilities.each do |availability| %>
       <tr>
-        <td><%= availability.user.email %></td>
-        <td><%= availability.slot.number %></td>
+        <td>
+          <% if availability.user.present? %>
+            <a href="/users/<%= availability.user.id %>">
+              <%= availability.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if availability.slot.present? %>
+            <a href="/slots/<%= availability.slot.id %>">
+              <%= availability.slot.number %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/availabilities/<%= availability.id %>" class="btn btn-primary">Show</a>
           
