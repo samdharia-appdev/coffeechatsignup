@@ -8,6 +8,10 @@ class Event < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :interested_users,
+             :through => :slots,
+             :source => :interested_users
+
   has_many   :registered_users,
              :through => :slots,
              :source => :user
