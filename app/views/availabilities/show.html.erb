@@ -17,12 +17,14 @@
       <a href="/availabilities" class="btn btn-primary">
         Back
       </a>
-      <a href="/availabilities/<%= @availability.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_availability/<%= @availability.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @availability.user %>
+        <a href="/availabilities/<%= @availability.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_availability/<%= @availability.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>

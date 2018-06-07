@@ -1,4 +1,14 @@
 class AvailabilitiesController < ApplicationController
+  before_action :current_user_must_be_availability_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_availability_user
+    availability = Availability.find(params[:id])
+
+    unless current_user == availability.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @availabilities = Availability.all
 
