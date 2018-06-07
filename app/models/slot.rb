@@ -1,6 +1,9 @@
 class Slot < ApplicationRecord
   # Direct associations
 
+  has_many   :availabilities,
+             :dependent => :destroy
+
   belongs_to :event
 
   belongs_to :user

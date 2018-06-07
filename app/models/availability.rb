@@ -1,6 +1,8 @@
 class Availability < ApplicationRecord
   # Direct associations
 
+  belongs_to :slot
+
   belongs_to :user
 
   # Indirect associations
