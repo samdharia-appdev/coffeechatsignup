@@ -47,8 +47,6 @@ class AvailabilitiesController < ApplicationController
 
   def update
     @availability = Availability.find(params[:id])
-
-    @availability.user_id = params[:user_id]
     @availability.slot_id = params[:slot_id]
 
     save_status = @availability.save
