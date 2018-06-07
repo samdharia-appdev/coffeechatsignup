@@ -33,7 +33,7 @@
           Slot
         </label>
 
-        <input type="text" id="slot_id" name="slot_id" placeholder="Slot" class="form-control" value="<%= @availability.slot_id %>">
+        <%= select_tag(:slot_id, options_from_collection_for_select(Slot.all, :id, :number, @availability.slot_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
