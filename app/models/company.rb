@@ -6,6 +6,10 @@ class Company < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :registered_users,
+             :through => :events,
+             :source => :registered_users
+
   # Validations
 
   validates :company_name, :uniqueness => true
