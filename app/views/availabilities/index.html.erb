@@ -17,7 +17,7 @@
       <% @availabilities.each do |availability| %>
       <tr>
         <td><%= availability.user.email %></td>
-        <td><%= availability.slot_id %></td>
+        <td><%= availability.slot.number %></td>
         <td>
           <a href="/availabilities/<%= availability.id %>" class="btn btn-primary">Show</a>
           <a href="/availabilities/<%= availability.id %>/edit" class="btn btn-warning">Edit</a>
