@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :available_slots,
+             :through => :availabilities,
+             :source => :slot
+
   # Validations
 
   # Include default devise modules. Others available are:

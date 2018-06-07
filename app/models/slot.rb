@@ -10,6 +10,10 @@ class Slot < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :interested_users,
+             :through => :availabilities,
+             :source => :user
+
   # Validations
 
   validates :event_id, :presence => true
