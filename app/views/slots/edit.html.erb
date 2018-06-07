@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @slot.errors.any? %>
+  <% @slot.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Slot #<%= @slot.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_slot/<%= @slot.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for number -->
+      <div class="form-group">
+        <label for="number" class="control-label">
+          Number
+        </label>
+
+        <input type="text" id="number" name="number" placeholder="Number" class="form-control" value="<%= @slot.number %>">
+      </div>
+
+      <!-- Label and input for event_id -->
+      <div class="form-group">
+        <label for="event_id" class="control-label">
+          Event
+        </label>
+
+        <input type="text" id="event_id" name="event_id" placeholder="Event" class="form-control" value="<%= @slot.event_id %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @slot.user_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Slot
+      </button>
+      or
+      <a href="/slots/<%= @slot.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
