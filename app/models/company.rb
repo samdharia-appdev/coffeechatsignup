@@ -6,6 +6,10 @@ class Company < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :interested_users,
+             :through => :events,
+             :source => :interested_users
+
   has_many   :registered_users,
              :through => :events,
              :source => :registered_users
