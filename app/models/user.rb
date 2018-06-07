@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :registered_events,
+             :through => :slots,
+             :source => :event
+
   has_many   :available_companies,
              :through => :available_events,
              :source => :company

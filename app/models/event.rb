@@ -8,6 +8,10 @@ class Event < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :registered_users,
+             :through => :slots,
+             :source => :user
+
   # Validations
 
 end
