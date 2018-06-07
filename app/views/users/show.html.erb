@@ -23,3 +23,220 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many availabilities -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Availabilities
+      </li>
+
+      <% @user.availabilities.each do |availability| %>
+        <li class="list-group-item">
+          <a href="/availabilities/<%= availability.id %>">
+            <%= availability.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/availabilities/<%= availability.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/availabilities/<%= availability.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_availability/<%= availability.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many slots -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Slots
+      </li>
+
+      <% @user.slots.each do |slot| %>
+        <li class="list-group-item">
+          <a href="/slots/<%= slot.id %>">
+            <%= slot.number %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/slots/<%= slot.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/slots/<%= slot.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_slot/<%= slot.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many available_slots -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Available Slots
+      </li>
+
+      <% @user.available_slots.each do |slot| %>
+        <li class="list-group-item">
+          <a href="/slots/<%= slot.id %>">
+            <%= slot.number %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/slots/<%= slot.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/slots/<%= slot.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_slot/<%= slot.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many registered_companies -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Registered Companies
+      </li>
+
+      <% @user.registered_companies.each do |company| %>
+        <li class="list-group-item">
+          <a href="/companies/<%= company.id %>">
+            <%= company.company_name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/companies/<%= company.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/companies/<%= company.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_company/<%= company.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many available_companies -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Available Companies
+      </li>
+
+      <% @user.available_companies.each do |company| %>
+        <li class="list-group-item">
+          <a href="/companies/<%= company.id %>">
+            <%= company.company_name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/companies/<%= company.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/companies/<%= company.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_company/<%= company.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many registered_events -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Registered Events
+      </li>
+
+      <% @user.registered_events.each do |event| %>
+        <li class="list-group-item">
+          <a href="/events/<%= event.id %>">
+            <%= event.company_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/events/<%= event.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/events/<%= event.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_event/<%= event.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many available_events -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Available Events
+      </li>
+
+      <% @user.available_events.each do |event| %>
+        <li class="list-group-item">
+          <a href="/events/<%= event.id %>">
+            <%= event.company_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/events/<%= event.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/events/<%= event.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_event/<%= event.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
