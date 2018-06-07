@@ -18,7 +18,7 @@
       <% @slots.each do |slot| %>
       <tr>
         <td><%= slot.number %></td>
-        <td><%= slot.event_id %></td>
+        <td><%= slot.event.company_id %></td>
         <td><%= slot.user_id %></td>
         <td>
           <a href="/slots/<%= slot.id %>" class="btn btn-primary">Show</a>
