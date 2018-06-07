@@ -5,4 +5,6 @@ class Slot < ApplicationRecord
 
   # Validations
 
+  validates :event_id, :presence => true
+
 end
